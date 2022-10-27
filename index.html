@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICE Map</title>
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        var viewportmeta = document.querySelector('meta[name="viewport"]');
+        if (viewportmeta) {
+            if (screen.width < 375) {
+                var newScale = screen.width / 375;
+                viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+            } else {
+                viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+            }
+        }
+    </script>
+
 </head>
 <body>
 
@@ -13,7 +26,11 @@
 
     <!-- bizratingNav -->
     <div class="bizratingNav">
-        <nav>
+        <nav >
+
+            <div style=" margin-left: auto;">
+                <img src="./img/close.png" alt=""  onclick="showBiz()" style="cursor: pointer; width: 20px;">
+            </div>
 
             <h1 style="font-size: 38px; color: white;">Bizrating</h1>
             <br>
@@ -27,7 +44,7 @@
           <br>
           <br>
 
-        <a href="http://icenxt.com/n-shop/n-biz/" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+        <a href="http://icenxt.com/n-shop/n-biz/" style="width: 100%; display: flex; justify-content: center; align-items: center; cursor: pointer;">
 
             <img src="./img/exploreButton.png" alt="" class="exButton">
 
@@ -39,6 +56,10 @@
     <!-- futurexNav -->
     <div class="futurexNav">
         <nav>
+
+            <div style=" margin-left: auto;">
+                <img src="./img/close.png" alt=""  onclick="showFx()" style="cursor: pointer; width: 20px;">
+            </div>
 
             <h1 style="font-size: 38px; color: white;">FutureX</h1>
             <br>
@@ -64,6 +85,10 @@
     <div class="ibuyerNav">
         <nav>
 
+            <div style=" margin-left: auto;">
+                <img src="./img/close.png" alt=""  onclick="showIb()" style="cursor: pointer; width: 20px;">
+            </div>
+
             <h1 style="font-size: 38px; color: white;">iBuyer</h1>
             <br>
 
@@ -87,6 +112,10 @@
     <!-- splNav -->
     <div class="splNav">
         <nav>
+
+            <div style=" margin-left: auto;">
+                <img src="./img/close.png" alt=""  onclick="showSpl()" style="cursor: pointer; width: 20px;">
+            </div>
 
             <h1 style="font-size: 38px; color: white;">SPL</h1>
             <br>
@@ -112,6 +141,10 @@
     <div class="vectorNav">
         <nav>
 
+            <div style=" margin-left: auto;">
+                <img src="./img/close.png" alt=""  onclick="showVector()" style="cursor: pointer; width: 20px;">
+            </div>
+
             <h1 style="font-size: 38px; color: white;">Mall365</h1>
             <br>
 
@@ -132,16 +165,28 @@
         </nav>
     </div>
 
-    <div class="main-section" id="main">
-        <img class="bizrating" src="./img/bizrating.png" alt="" width="150px" onmousemove="showBiz()">
-        <img class="futurex" src="./img/futurex.png" alt="" width="180px" onmouseover="showFx()">
-        <img class="ibuyer" src="./img/ibuyer.png" alt="" width="150px" onmouseover="showIb()">
-        <img class="spl" src="./img/spl.png" alt="" width="85px" onmouseover="showSpl()">
-        <img class="vector" src="./img/Vector.png" alt="" width="176px" onmouseover="showVector()">
+    <!-- DESKTOP -->
+    <div class="main-section" id="mainD">
+        <img class="bizrating" src="./img/bizrating.png" alt="" width="150px" onclick="showBiz()" style="cursor: pointer;">
+        <img class="futurex" src="./img/futurex.png" alt="" width="180px" onclick="showFx()" style="cursor: pointer;">
+        <img class="ibuyer" src="./img/ibuyer.png" alt="" width="150px" onclick="showIb()" style="cursor: pointer;">
+        <img class="spl" src="./img/spl.png" alt="" width="85px" onclick="showSpl()" style="cursor: pointer;">
+        <img class="vector" src="./img/Vector.png" alt="" width="176px" onclick="showVector()" style="cursor: pointer;">
+    </div>
+
+    <!-- MOBILE -->
+    <div class="main-section" id="mainM">
+        <img class="bizrating" src="./img/bizrating.png" alt="" width="60px" onclick="showBiz()" style="cursor: pointer;">
+        <img class="futurex" src="./img/futurex.png" alt="" width="70px" onclick="showFx()" style="cursor: pointer;">
+        <img class="ibuyer" src="./img/ibuyer.png" alt="" width="50px" onclick="showIb()" style="cursor: pointer;">
+        <img class="spl" src="./img/spl.png" alt="" width="32px" onclick="showSpl()" style="cursor: pointer;">
+        <img class="vector" src="./img/Vector.png" alt="" width="60px" onclick="showVector()" style="cursor: pointer;">
     </div>
 
     
 
     <script src="./script.js"></script>
+    
+
 </body>
 </html>
